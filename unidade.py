@@ -1,4 +1,3 @@
-from argparse import OPTIONAL
 import pandas as pd 
 import matplotlib.pyplot as plt
 
@@ -34,11 +33,10 @@ plt.tight_layout()
 plt.show()
 
 
-
-'''
+#Taxa de internação por unidade
 contagem_df = data.groupby('Descrição da Unidade')['Desencadeou Internamento'].value_counts().unstack(fill_value=0)
 top20_sim = contagem_df.sort_values(by='Nao', ascending=False).head(20)
 
 top20_sim.plot(kind='barh', stacked=True, figsize=(10, 8))
 
-plt.show()'''
+plt.show()
